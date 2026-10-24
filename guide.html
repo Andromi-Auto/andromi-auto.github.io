@@ -150,20 +150,37 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
 
         <section id="interconnectivity-module">
           <h2><span class="icon">extension</span>Interconnectivity module</h2>
-          <p>On <b>Global and EEA (EU) ROMs</b> the phone cannot connect to a Xiaomi EV, so Andromi Auto has nowhere to be shown. A KernelSU module adds Xiaomi Interconnectivity for the car back to these ROMs. <b>This module is required</b>: without it the app is of no use in the car.</p>
-          <div class="note warn">
-            <span class="icon">schedule</span>
-            <div><p><b>Guide coming soon.</b> The module and its step-by-step install guide will be linked here.</p><p>You need an <b>unlocked bootloader</b> and <b>KernelSU</b> on the phone to install it.</p></div>
+          <p>On <b>Global and EEA (EU) ROMs</b> the phone cannot connect to a Xiaomi EV, so Andromi Auto has nowhere to be shown. The <b>Xiaomi EV Interconnect</b> KernelSU module adds Xiaomi's car connection service back to these ROMs. <b>This module is required</b>: without it the app is of no use in the car.</p>
+          <div class="btn-row" style="margin:20px 0">
+            <a class="btn btn-filled" href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect/releases/latest"><span class="icon">download</span>Download the module</a>
+            <a class="btn btn-outlined" href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect"><span class="icon">code</span>Module source</a>
+          </div>
+          <ol class="steps">
+            <li><strong>Download the zip</strong><p>On the release page, tap <b>xiaomi-ev-interconnect-&lt;version&gt;.zip</b> under Assets. Keep it as a zip; do not unpack it.</p></li>
+            <li><strong>Install it in KernelSU</strong><p>Open <b>KernelSU</b>, go to the <b>Module</b> tab, tap <b>Install</b> and choose the zip.</p></li>
+            <li><strong>Reboot</strong><p>Restart the phone when KernelSU has finished. The phone can now connect to your Xiaomi EV with Interconnectivity.</p></li>
+          </ol>
+          <div class="note">
+            <span class="icon">info</span>
+            <div>
+              <p><b>Your phone's region is reported as China</b> while the module is active, because Xiaomi's car connection service only runs on the Chinese region. Some Xiaomi apps that check the region may behave as on a Chinese ROM. Removing the module and restarting restores the original region.</p>
+              <p>New versions of the module appear as an update in KernelSU's module list.</p>
+            </div>
           </div>
         </section>
 
         <section id="digital-key">
           <h2><span class="icon">key</span>Car digital key</h2>
-          <p>This is not needed for Andromi Auto, but good to know if you are moving to a Global or EEA ROM: those ROMs cannot add your Xiaomi EV as a <b>digital key</b> in the phone's wallet. Another KernelSU module brings this support back.</p>
-          <div class="note warn">
-            <span class="icon">schedule</span>
-            <div><p><b>Details coming soon.</b> A link to the digital key module will be added here.</p></div>
+          <p>Not needed for Andromi Auto, but good to know if you are moving to a Global or EEA ROM: those ROMs cannot add your Xiaomi EV as a <b>digital key</b> on the phone. The <b>Xiaomi EV Key Enabler</b> KernelSU module adds the Digital Key and Smart cards apps that make it work.</p>
+          <div class="btn-row" style="margin:20px 0">
+            <a class="btn btn-tonal" href="https://github.com/Andromi-Auto/xiaomi-ev-key/releases/latest"><span class="icon">download</span>Download the module</a>
+            <a class="btn btn-outlined" href="https://github.com/Andromi-Auto/xiaomi-ev-key"><span class="icon">code</span>Module source</a>
           </div>
+          <ol class="steps">
+            <li><strong>Download the zip</strong><p>On the release page, tap <b>xiaomi-ev-key-&lt;version&gt;.zip</b> under Assets.</p></li>
+            <li><strong>Install it in KernelSU</strong><p>Open <b>KernelSU</b> → <b>Module</b> → <b>Install</b>, choose the zip, then restart the phone.</p></li>
+            <li><strong>Add the car key</strong><p>After the restart, add your Xiaomi EV as a digital key as you normally would.</p></li>
+          </ol>
         </section>
 
         <section id="help">

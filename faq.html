@@ -86,7 +86,11 @@
           </details>
           <details id="digital-key">
             <summary>Will I lose the car's digital key on a Global or EEA ROM?</summary>
-            <div class="answer"><p>Out of the box, Global and EEA ROMs cannot add a Xiaomi EV as a digital key. It has nothing to do with Andromi Auto, but another KernelSU module brings this support back. <a href="guide.html#digital-key">More in the guide</a>.</p></div>
+            <div class="answer"><p>Out of the box, Global and EEA ROMs cannot add a Xiaomi EV as a digital key. It has nothing to do with Andromi Auto, but the <a href="https://github.com/Andromi-Auto/xiaomi-ev-key">Xiaomi EV Key Enabler</a> KernelSU module brings this support back. <a href="guide.html#digital-key">How to install it</a>.</p></div>
+          </details>
+          <details id="region">
+            <summary>Why does my phone show China as its region after installing the module?</summary>
+            <div class="answer"><p>Xiaomi's car connection service only runs on the Chinese region, so the <a href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect">Xiaomi EV Interconnect</a> module reports the region as China while it is active. Some Xiaomi apps that check the region may behave as on a Chinese ROM. Removing the module and restarting restores the original region.</p></div>
           </details>
           <details id="baidu">
             <summary>Why does it install as com.baidu.searchbox?</summary>
