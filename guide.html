@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User guide · Andromi Auto</title>
+  <meta name="description" content="How to install and set up Andromi Auto: requirements, first start, pinning to the car screen, automatic start, updates and picture quality.">
+  <meta name="theme-color" content="#FFF8F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A120D" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300..700&family=Roboto+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top-bar">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon.svg" alt="" width="36" height="36">Andromi Auto</a>
+      <nav class="nav" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="guide.html" aria-current="page">User guide</a>
+        <a href="faq.html">FAQ</a>
+        <a href="https://github.com/Andromi-Auto/andromi-auto">Source code</a>
+      </nav>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch theme"><span class="icon">dark_mode</span></button>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="page-title">
+      <h1>User guide</h1>
+      <p>Everything from installing Andromi Auto to having Android Auto start by itself when you get into the car.</p>
+    </div>
+
+    <div class="doc">
+      <nav class="toc" aria-label="Contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#first-start">First start</a></li>
+          <li><a href="#car-screen">Show it on the car</a></li>
+          <li><a href="#automatic-start">Automatic start</a></li>
+          <li><a href="#picture">Picture quality</a></li>
+          <li><a href="#updates">Updates</a></li>
+          <li><a href="#interconnectivity-module">Interconnectivity module</a></li>
+          <li><a href="#digital-key">Car digital key</a></li>
+          <li><a href="#help">Getting help</a></li>
+        </ol>
+      </nav>
+
+      <div class="doc-body">
+        <section id="requirements">
+          <h2><span class="icon">checklist</span>Requirements</h2>
+          <ul class="check-list">
+            <li><span class="icon filled">check_circle</span><div><strong>HyperOS <span class="badge">Required</span></strong><span class="text">A Xiaomi phone on HyperOS. Andromi Auto relies on HyperOS's Xiaomi Interconnectivity to appear on the car screen.</span></div></li>
+            <li><span class="icon filled">check_circle</span><div><strong>Global or EEA (EU) ROM <span class="badge">Recommended</span></strong><span class="text">Android Auto runs on the phone, so it needs Google services and a ROM where Android Auto is supported. Global and EEA ROMs have both.</span></div></li>
+            <li><span class="icon filled">check_circle</span><div><strong>Android Auto <span class="badge">Required</span></strong><span class="text">The Android Auto app from Google Play, kept up to date.</span></div></li>
+            <li><span class="icon">extension</span><div><strong>Interconnectivity module <span class="badge">Global/EEA ROMs</span></strong><span class="text">Global and EEA ROMs need an extra KernelSU module to connect to a Xiaomi EV. See <a href="#interconnectivity-module">Interconnectivity module</a>.</span></div></li>
+            <li><span class="icon">tag</span><div><strong>Root <span class="badge optional">For automatic start</span></strong><span class="text">KernelSU (or Magisk) lets the app set up automatic start with one tap. Without root you can still start Android Auto by hand.</span></div></li>
+            <li><span class="icon">key</span><div><strong>Digital key module <span class="badge optional">Optional</span></strong><span class="text">Not needed for Andromi Auto. See <a href="#digital-key">Car digital key</a>.</span></div></li>
+          </ul>
+          <div class="note">
+            <span class="icon">info</span>
+            <div><p>Andromi Auto installs under the name <code>com.baidu.searchbox</code>, because the car only shows apps from Xiaomi's allowed list. Uninstall the real Baidu app first, if you have it. <a href="faq.html#baidu">Why this name?</a></p></div>
+          </div>
+        </section>
+
+        <section id="install">
+          <h2><span class="icon">download</span>Install</h2>
+          <ol class="steps">
+            <li><strong>Download the APK</strong><p>On your phone, open the <a href="https://github.com/Andromi-Auto/andromi-auto/releases/latest">latest release</a> and tap <b>Andromi-Auto-release.apk</b>, or use the <a href="./#download">Download button</a> on the home page.</p></li>
+            <li><strong>Install it</strong><p>Open the downloaded file. If Android asks, allow your browser or file manager to install apps, then tap <b>Install</b>.</p></li>
+            <li><strong>Open Andromi Auto</strong><p>The setup walks you through language, look and the permissions the app needs. Allow them all, so Android Auto can use the microphone, notifications and Bluetooth.</p></li>
+          </ol>
+        </section>
+
+        <section id="first-start">
+          <h2><span class="icon">play_circle</span>First start</h2>
+          <ol class="steps">
+            <li><strong>Tap Start Android Auto</strong><p>On the home screen, tap the big <b>Start Android Auto</b> button. The first time, Android Auto may ask you to accept its terms and permissions on the phone. Accept them.</p></li>
+            <li><strong>Check that it works on the phone</strong><p>Android Auto opens full screen inside Andromi Auto. Try Maps or music to be sure everything works before you go to the car.</p></li>
+            <li><strong>Go back</strong><p>The app has no back arrows. Use your phone's back gesture to leave Android Auto or a settings screen. Swipe back twice on the home screen to close the app completely.</p></li>
+          </ol>
+        </section>
+
+        <section id="car-screen">
+          <h2><span class="icon">directions_car</span>Show it on the car</h2>
+          <ol class="steps">
+            <li><strong>Connect the phone to the car</strong><p>Connect your phone to the car with Xiaomi Interconnectivity as you normally do, so the car can show your phone's apps.</p></li>
+            <li><strong>Open Andromi Auto on the car screen</strong><p>Find <b>Andromi Auto</b> in the car's list of phone apps (it may show the Baidu name or icon on some car software) and open it.</p></li>
+            <li><strong>Pin it and pick the size</strong><p>Pin the window where you want it. The car offers a tall window (size 1) and wider ones (sizes 2 and 3).</p></li>
+            <li><strong>Match the orientation</strong><p>On the Andromi Auto home screen, use the <b>Screen</b> switch: <b>Portrait</b> for size 1, <b>Landscape</b> for sizes 2 and 3.</p></li>
+          </ol>
+          <div class="note">
+            <span class="icon">info</span>
+            <div><p>The exact menus on the car depend on its software version. If Andromi Auto is not in the list, check that the phone is connected and, on a Global or EEA ROM, that the <a href="#interconnectivity-module">Interconnectivity module</a> is installed.</p></div>
+          </div>
+        </section>
+
+        <section id="automatic-start">
+          <h2><span class="icon">bolt</span>Automatic start</h2>
+          <p>With automatic start, Android Auto starts by itself as soon as the phone connects to the car's Bluetooth, and stops again when the car disconnects. Open it from the home screen: tap the <b>Automatic start</b> card.</p>
+          <ol class="steps">
+            <li><strong>Root setup</strong><p>Tap <b>Set up with root</b> and allow the root request in KernelSU or Magisk. This re-enables the part of Android Auto 17.4+ that lets an app start it, and gives Andromi Auto the permissions it needs.</p>
+              <p>No root manager? Run these commands once as root (also shown in the app, with a Copy button):</p>
+<pre><code>pm enable --user 0 com.google.android.projection.gearhead/com.google.android.apps.auto.wireless.setup.receiver.WirelessStartupReceiver
+appops set --user 0 com.baidu.searchbox SYSTEM_ALERT_WINDOW allow
+pm grant com.baidu.searchbox android.permission.BLUETOOTH_CONNECT
+pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre></li>
+            <li><strong>Car Bluetooth</strong><p>Tap <b>Choose device</b> and pick your car from the paired Bluetooth devices.</p></li>
+            <li><strong>Open from the background</strong><p>Allowed by the root setup. Otherwise tap <b>Allow</b> and turn on "Display over other apps" for Andromi Auto.</p></li>
+            <li><strong>Turn it on</strong><p>Switch on <b>Start Android Auto automatically</b>. When all three items show a check mark, it is ready.</p></li>
+          </ol>
+          <h3>What happens in the car</h3>
+          <ul class="check-list">
+            <li><span class="icon">bluetooth_connected</span><div><strong>The car connects</strong><span class="text">Andromi Auto opens by itself and starts Android Auto, without the start screen.</span></div></li>
+            <li><span class="icon">open_in_new</span><div><strong>You open the app yourself</strong><span class="text">If the car is already connected, Android Auto starts at once. If not, the normal home screen opens.</span></div></li>
+            <li><span class="icon">bluetooth_disabled</span><div><strong>The car disconnects</strong><span class="text">After a few seconds Android Auto stops and you are back on Andromi Auto's home screen, ready for the next drive.</span></div></li>
+          </ul>
+        </section>
+
+        <section id="picture">
+          <h2><span class="icon">high_quality</span>Picture quality</h2>
+          <p>The picture is compressed twice: Android Auto turns its screen into a video, and HyperOS compresses the window again to send it to the car. A very high resolution therefore does not always look sharper.</p>
+          <ul class="check-list">
+            <li><span class="icon">tune</span><div><strong>Settings → Graphic → Resolution</strong><span class="text">1080p or 1440p with the H.265 codec is the sensible range. Try both and keep what looks best on your car.</span></div></li>
+            <li><span class="icon">fact_check</span><div><strong>Settings → Android Auto picture</strong><span class="text">The card at the top of Settings shows what Android Auto really sent last time. If it refused a size, the card says so.</span></div></li>
+          </ul>
+        </section>
+
+        <section id="updates">
+          <h2><span class="icon">system_update</span>Updates</h2>
+          <ol class="steps">
+            <li><strong>Check for updates</strong><p>Open <b>Settings</b> and tap <b>Check for updates</b>. Andromi Auto looks for the newest stable release on GitHub.</p></li>
+            <li><strong>Download and install</strong><p>If there is a newer build, tap <b>Download and install</b>. The first time, Android asks you to allow installing apps from Andromi Auto: turn it on, come back and tap the button again.</p></li>
+          </ol>
+          <div class="note">
+            <span class="icon">info</span>
+            <div><p>Updates install over the old version and keep all your settings. You can also download any version from the <a href="https://github.com/Andromi-Auto/andromi-auto/releases">releases page</a>.</p></div>
+          </div>
+        </section>
+
+        <section id="interconnectivity-module">
+          <h2><span class="icon">extension</span>Interconnectivity module</h2>
+          <p>On Chinese HyperOS ROMs the phone connects to a Xiaomi EV out of the box. On <b>Global and EEA (EU) ROMs</b> this connection to the car is missing, so Andromi Auto has nowhere to be shown. A KernelSU module adds Xiaomi Interconnectivity for the car back to these ROMs.</p>
+          <div class="note warn">
+            <span class="icon">schedule</span>
+            <div><p><b>Guide coming soon.</b> The module and its step-by-step install guide will be linked here.</p><p>You will need <b>KernelSU</b> installed on the phone to use it.</p></div>
+          </div>
+        </section>
+
+        <section id="digital-key">
+          <h2><span class="icon">key</span>Car digital key</h2>
+          <p>This is not needed for Andromi Auto, but good to know if you are moving to a Global or EEA ROM: those ROMs cannot add your Xiaomi EV as a <b>digital key</b> in the phone's wallet. Another KernelSU module brings this support back.</p>
+          <div class="note warn">
+            <span class="icon">schedule</span>
+            <div><p><b>Details coming soon.</b> A link to the digital key module will be added here.</p></div>
+          </div>
+        </section>
+
+        <section id="help">
+          <h2><span class="icon">support</span>Getting help</h2>
+          <ul class="check-list">
+            <li><span class="icon">quiz</span><div><strong>Read the FAQ</strong><span class="text">Most questions are answered in the <a href="faq.html">FAQ</a>.</span></div></li>
+            <li><span class="icon">description</span><div><strong>Export the logs</strong><span class="text">In Settings → Debug, turn on <b>Debug Mode</b>, make the problem happen again, then tap <b>Export Logs</b> straight away.</span></div></li>
+            <li><span class="icon">bug_report</span><div><strong>Report it</strong><span class="text">Open an <a href="https://github.com/Andromi-Auto/andromi-auto/issues">issue on GitHub</a>, describe what you did and attach the logs and a screenshot.</span></div></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <a class="brand" href="./"><img src="assets/icon.svg" alt="" width="36" height="36">Andromi Auto</a>
+        <p>A free, open source community project based on <a href="https://github.com/andreknieriem/open-headunit">Open Headunit</a>, licensed under the GNU AGPL v3.0. Not affiliated with Xiaomi, Baidu or Google. Android Auto is a trademark of Google LLC.</p>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="guide.html">User guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="guide.html#requirements">Requirements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/Andromi-Auto/andromi-auto/releases">Releases</a></li>
+          <li><a href="https://github.com/Andromi-Auto/andromi-auto">Source code</a></li>
+          <li><a href="https://github.com/Andromi-Auto/andromi-auto/issues">Report a problem</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

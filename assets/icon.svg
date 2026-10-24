@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="Andromi Auto">
+  <!-- The Andromi Auto launcher icon: the Android Auto mark in Xiaomi orange on white. -->
+  <defs>
+    <clipPath id="l"><rect width="54" height="108"/></clipPath>
+    <clipPath id="r"><rect x="54" width="54" height="108"/></clipPath>
+    <path id="a" d="M59.20,23.17 L87.88,73.16 A4.57,4.57 0 0 1 83.92,80.00 L75.68,80.00 A0.50,0.50 0 0 1 75.24,79.74 L54.88,42.88 A1.00,1.00 0 0 0 53.12,42.88 L32.76,79.74 A0.50,0.50 0 0 1 32.32,80.00 L24.08,80.00 A4.57,4.57 0 0 1 20.12,73.16 L48.80,23.17 A6.00,6.00 0 0 1 59.20,23.17 Z"/>
+    <path id="b" d="M57.49,43.54 L78.29,80.73 A4.50,4.50 0 0 1 73.01,87.22 L54.45,81.37 A1.50,1.50 0 0 0 53.55,81.37 L34.99,87.22 A4.50,4.50 0 0 1 29.71,80.73 L50.51,43.54 A4.00,4.00 0 0 1 57.49,43.54 Z"/>
+  </defs>
+  <rect width="108" height="108" rx="26" fill="#FFFFFF"/>
+  <g transform="translate(54 54) scale(0.9) translate(-54 -52.1)">
+    <use href="#a" fill="#F26100" clip-path="url(#l)"/>
+    <use href="#a" fill="#FF6900" clip-path="url(#r)"/>
+    <use href="#b" fill="#F2F2F2" clip-path="url(#l)"/>
+    <use href="#b" fill="#E3E3E3" clip-path="url(#r)"/>
+  </g>
+</svg>
