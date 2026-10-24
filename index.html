@@ -45,12 +45,13 @@
           <h1>Android Auto on your Xiaomi EV</h1>
           <p class="lead">Andromi Auto runs the real Android Auto on your Xiaomi phone and shows it in a window that HyperOS sends to the car's screen. Google Maps, your music and messages, right next to the car's own widgets.</p>
           <div class="btn-row">
-            <a class="btn btn-filled" href="https://github.com/Andromi-Auto/andromi-auto/releases/latest/download/Andromi-Auto-release.apk"><span class="icon">download</span>Download APK</a>
-            <a class="btn btn-tonal" href="guide.html"><span class="icon">menu_book</span>User guide</a>
+            <a class="btn btn-filled" href="#requirements"><span class="icon">checklist</span>Check requirements</a>
+            <a class="btn btn-tonal" href="#download"><span class="icon">download</span>Download</a>
           </div>
           <p class="release-note" data-latest-release>Free and open source · Android app for Xiaomi phones on HyperOS</p>
           <ul class="chips" aria-label="Highlights">
             <li class="chip"><span class="icon">smartphone</span>HyperOS</li>
+            <li class="chip"><span class="icon">lock_open</span>Root required</li>
             <li class="chip"><span class="icon">directions_car</span>Xiaomi EV</li>
             <li class="chip"><span class="icon">bolt</span>Starts with the car</li>
             <li class="chip"><span class="icon">code</span>Open source</li>
@@ -70,6 +71,43 @@
             <span class="flow-step"><span class="icon">directions_car</span>On the car screen</span>
           </div>
         </figure>
+      </div>
+    </section>
+
+    <!-- Requirements: first, so nobody downloads an app their phone cannot use -->
+    <section id="requirements">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Before you download</span>
+          <h2>What you need</h2>
+          <p>Check every required item first. Without them, Andromi Auto cannot reach the car screen.</p>
+        </div>
+        <div class="grid two">
+          <div class="card outlined">
+            <h3>Required</h3>
+            <ul class="check-list">
+              <li><span class="icon filled">smartphone</span><div><strong>A Xiaomi phone on HyperOS</strong><span class="text">Andromi Auto uses HyperOS's Xiaomi Interconnectivity to show its window on the car.</span></div></li>
+              <li><span class="icon filled">public</span><div><strong>Global or EEA (EU) ROM <span class="badge">Recommended</span></strong><span class="text">These ROMs come with Google services and support Android Auto, which the app runs on the phone.</span></div></li>
+              <li><span class="icon filled">lock_open</span><div><strong>Unlocked bootloader and root</strong><span class="text">Root with KernelSU is needed to install the Interconnectivity module below, and it lets the app set up automatic start.</span></div></li>
+              <li><span class="icon filled">extension</span><div><strong>Interconnectivity module</strong><span class="text">Global and EEA ROMs cannot connect to a Xiaomi EV on their own. This KernelSU module adds it. Without it, Andromi Auto has no car screen to show on. <a href="guide.html#interconnectivity-module">Install guide</a></span></div></li>
+              <li><span class="icon filled">play_circle</span><div><strong>The Android Auto app</strong><span class="text">From Google Play, kept up to date.</span></div></li>
+            </ul>
+          </div>
+          <div class="card outlined">
+            <h3>Optional</h3>
+            <ul class="check-list">
+              <li><span class="icon">key</span><div><strong>Car digital key module</strong><span class="text">Not needed for Andromi Auto. Global and EEA ROMs cannot add a Xiaomi EV as a digital key, and another KernelSU module brings it back. <a href="guide.html#digital-key">Read more</a></span></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="note warn">
+          <span class="icon">warning</span>
+          <div><p><b>Unlocking the bootloader erases the phone.</b> Back up your data first. Xiaomi also makes you wait before it allows the unlock, so plan ahead.</p></div>
+        </div>
+        <div class="btn-row" style="margin-top:8px">
+          <a class="btn btn-filled" href="#download"><span class="icon">check</span>I have everything</a>
+          <a class="btn btn-tonal" href="guide.html#requirements"><span class="icon">menu_book</span>Details</a>
+        </div>
       </div>
     </section>
 
@@ -143,33 +181,6 @@
       </div>
     </section>
 
-    <!-- Requirements -->
-    <section id="requirements">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">Requirements</span>
-          <h2>What you need</h2>
-          <p>Andromi Auto is built for Xiaomi phones and Xiaomi EVs. Check these before you install.</p>
-        </div>
-        <div class="grid two">
-          <div class="card outlined">
-            <ul class="check-list">
-              <li><span class="icon filled">check_circle</span><div><strong>A Xiaomi phone on HyperOS</strong><span class="text">Andromi Auto needs HyperOS. It uses Xiaomi Interconnectivity to show its window on the car.</span></div></li>
-              <li><span class="icon filled">check_circle</span><div><strong>Global or EEA (EU) ROM recommended</strong><span class="text">These ROMs come with Google services and support Android Auto, which the app runs on the phone.</span></div></li>
-              <li><span class="icon filled">check_circle</span><div><strong>The Android Auto app</strong><span class="text">Installed from Google Play on the phone.</span></div></li>
-            </ul>
-          </div>
-          <div class="card outlined">
-            <ul class="check-list">
-              <li><span class="icon">extension</span><div><strong>Interconnectivity module on Global/EEA ROMs</strong><span class="text">Global and EEA ROMs need an extra KernelSU module to connect to a Xiaomi EV. <a href="guide.html#interconnectivity-module">See the guide</a>.</span></div></li>
-              <li><span class="icon">tag</span><div><strong>Root for automatic start</strong><span class="text">KernelSU or Magisk, or running a few commands as root once. Starting Android Auto by hand works without it.</span></div></li>
-              <li><span class="icon">key</span><div><strong>Car digital key (optional)</strong><span class="text">Not needed for Andromi Auto. Global and EEA ROMs can get it with another KernelSU module. <a href="guide.html#digital-key">Read more</a>.</span></div></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Download -->
     <section id="download">
       <div class="wrap">
@@ -177,7 +188,7 @@
           <div>
             <span class="eyebrow">Download</span>
             <h2>Get Andromi Auto</h2>
-            <p>Download the APK on your phone and open it to install. Android asks once to allow installing from your browser. After that, Andromi Auto updates itself from Settings.</p>
+            <p>Make sure you have everything under <a href="#requirements" style="color:inherit;font-weight:600">What you need</a>. Then download the APK on your phone and open it to install. Android asks once to allow installing from your browser. After that, Andromi Auto updates itself from Settings.</p>
             <p>The app installs as <code>com.baidu.searchbox</code> so the car lists it. It cannot be installed next to the real Baidu app. <a href="faq.html#baidu" style="color:inherit;font-weight:600">Why?</a></p>
           </div>
           <div class="btn-row">

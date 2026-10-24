@@ -63,8 +63,8 @@
             <li><span class="icon filled">check_circle</span><div><strong>HyperOS <span class="badge">Required</span></strong><span class="text">A Xiaomi phone on HyperOS. Andromi Auto relies on HyperOS's Xiaomi Interconnectivity to appear on the car screen.</span></div></li>
             <li><span class="icon filled">check_circle</span><div><strong>Global or EEA (EU) ROM <span class="badge">Recommended</span></strong><span class="text">Android Auto runs on the phone, so it needs Google services and a ROM where Android Auto is supported. Global and EEA ROMs have both.</span></div></li>
             <li><span class="icon filled">check_circle</span><div><strong>Android Auto <span class="badge">Required</span></strong><span class="text">The Android Auto app from Google Play, kept up to date.</span></div></li>
-            <li><span class="icon">extension</span><div><strong>Interconnectivity module <span class="badge">Global/EEA ROMs</span></strong><span class="text">Global and EEA ROMs need an extra KernelSU module to connect to a Xiaomi EV. See <a href="#interconnectivity-module">Interconnectivity module</a>.</span></div></li>
-            <li><span class="icon">tag</span><div><strong>Root <span class="badge optional">For automatic start</span></strong><span class="text">KernelSU (or Magisk) lets the app set up automatic start with one tap. Without root you can still start Android Auto by hand.</span></div></li>
+            <li><span class="icon filled">check_circle</span><div><strong>Unlocked bootloader and root <span class="badge">Required</span></strong><span class="text">Root with KernelSU is needed to install the Interconnectivity module, and lets the app set up automatic start with one tap. Unlocking the bootloader erases the phone, so back up first.</span></div></li>
+            <li><span class="icon filled">check_circle</span><div><strong>Interconnectivity module <span class="badge">Required</span></strong><span class="text">Global and EEA ROMs cannot connect to a Xiaomi EV on their own. This KernelSU module adds it; without it, Andromi Auto has no car screen to show on. See <a href="#interconnectivity-module">Interconnectivity module</a>.</span></div></li>
             <li><span class="icon">key</span><div><strong>Digital key module <span class="badge optional">Optional</span></strong><span class="text">Not needed for Andromi Auto. See <a href="#digital-key">Car digital key</a>.</span></div></li>
           </ul>
           <div class="note">
@@ -109,8 +109,8 @@
           <h2><span class="icon">bolt</span>Automatic start</h2>
           <p>With automatic start, Android Auto starts by itself as soon as the phone connects to the car's Bluetooth, and stops again when the car disconnects. Open it from the home screen: tap the <b>Automatic start</b> card.</p>
           <ol class="steps">
-            <li><strong>Root setup</strong><p>Tap <b>Set up with root</b> and allow the root request in KernelSU or Magisk. This re-enables the part of Android Auto 17.4+ that lets an app start it, and gives Andromi Auto the permissions it needs.</p>
-              <p>No root manager? Run these commands once as root (also shown in the app, with a Copy button):</p>
+            <li><strong>Root setup</strong><p>Tap <b>Set up with root</b> and allow the root request in KernelSU. This re-enables the part of Android Auto 17.4+ that lets an app start it, and gives Andromi Auto the permissions it needs.</p>
+              <p>If the button does not work, run these commands once in a root shell (also shown in the app, with a Copy button):</p>
 <pre><code>pm enable --user 0 com.google.android.projection.gearhead/com.google.android.apps.auto.wireless.setup.receiver.WirelessStartupReceiver
 appops set --user 0 com.baidu.searchbox SYSTEM_ALERT_WINDOW allow
 pm grant com.baidu.searchbox android.permission.BLUETOOTH_CONNECT
@@ -150,10 +150,10 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
 
         <section id="interconnectivity-module">
           <h2><span class="icon">extension</span>Interconnectivity module</h2>
-          <p>On Chinese HyperOS ROMs the phone connects to a Xiaomi EV out of the box. On <b>Global and EEA (EU) ROMs</b> this connection to the car is missing, so Andromi Auto has nowhere to be shown. A KernelSU module adds Xiaomi Interconnectivity for the car back to these ROMs.</p>
+          <p>On <b>Global and EEA (EU) ROMs</b> the phone cannot connect to a Xiaomi EV, so Andromi Auto has nowhere to be shown. A KernelSU module adds Xiaomi Interconnectivity for the car back to these ROMs. <b>This module is required</b>: without it the app is of no use in the car.</p>
           <div class="note warn">
             <span class="icon">schedule</span>
-            <div><p><b>Guide coming soon.</b> The module and its step-by-step install guide will be linked here.</p><p>You will need <b>KernelSU</b> installed on the phone to use it.</p></div>
+            <div><p><b>Guide coming soon.</b> The module and its step-by-step install guide will be linked here.</p><p>You need an <b>unlocked bootloader</b> and <b>KernelSU</b> on the phone to install it.</p></div>
           </div>
         </section>
 

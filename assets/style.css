@@ -243,7 +243,7 @@ section + section { padding-top: 24px; }
 }
 
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
-.grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
 
 .card {
   background: var(--surface-container-low);
@@ -254,6 +254,7 @@ section + section { padding-top: 24px; }
 .card.filled { background: var(--surface-container-highest); }
 .card.outlined { background: var(--surface); border: 1px solid var(--outline-variant); }
 .card h3 { margin-bottom: .4em; }
+.card h3 + .check-list { margin-top: 16px; }
 .card p:last-child, .card ul:last-child, .card ol:last-child { margin-bottom: 0; }
 .card p, .card li { color: var(--on-surface-variant); }
 

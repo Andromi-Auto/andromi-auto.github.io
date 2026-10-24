@@ -73,14 +73,15 @@
             <summary>Which ROM should I use: Chinese, Global or EEA?</summary>
             <div class="answer">
               <p>A <b>Global or EEA (EU) ROM</b> is ideal. Android Auto runs on the phone, so it needs Google services and a ROM where Android Auto is supported, which these ROMs have.</p>
-              <p>The catch: Global and EEA ROMs cannot connect to a Xiaomi EV out of the box. A KernelSU module adds that back. See the <a href="guide.html#interconnectivity-module">Interconnectivity module</a> section of the guide.</p>
+              <p>The catch: Global and EEA ROMs cannot connect to a Xiaomi EV out of the box. A KernelSU module adds that back, so you also need an unlocked bootloader and root. See the <a href="guide.html#interconnectivity-module">Interconnectivity module</a> section of the guide.</p>
             </div>
           </details>
           <details id="root">
             <summary>Do I need root?</summary>
             <div class="answer">
-              <p>For Andromi Auto itself, only for <b>automatic start</b>: on Android Auto 17.4 and newer, a part of Android Auto has to be switched back on as root. You can do it with one tap (KernelSU or Magisk) or by running the commands shown in the app once.</p>
-              <p>On a Global or EEA ROM you need <b>KernelSU</b> anyway for the Interconnectivity module.</p>
+              <p><b>Yes.</b> You need an unlocked bootloader and root with <b>KernelSU</b>. On a Global or EEA ROM the phone cannot connect to a Xiaomi EV without the Interconnectivity module, and that module is installed through KernelSU. Without it Andromi Auto has no car screen to show on.</p>
+              <p>Root is also what lets the app set up automatic start with one tap.</p>
+              <p>Unlocking the bootloader erases the phone, so back up your data first.</p>
             </div>
           </details>
           <details id="digital-key">
