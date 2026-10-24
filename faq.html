@@ -79,10 +79,21 @@
           <details id="root">
             <summary>Do I need root?</summary>
             <div class="answer">
-              <p><b>Yes.</b> You need an unlocked bootloader and root with <b>KernelSU</b>. On a Global or EEA ROM the phone cannot connect to a Xiaomi EV without the Interconnectivity module, and that module is installed through KernelSU. Without it Andromi Auto has no car screen to show on.</p>
+              <p><b>Yes.</b> You need an unlocked bootloader and root with <b>KernelSU</b> or <b>KernelSU Next</b>, plus the <a href="#metamodule">NoMount metamodule</a>. On a Global or EEA ROM the phone cannot connect to a Xiaomi EV without the Interconnectivity module, and that module is installed through KernelSU. Without it Andromi Auto has no car screen to show on.</p>
               <p>Root is also what lets the app set up automatic start with one tap.</p>
               <p>Unlocking the bootloader erases the phone, so back up your data first.</p>
             </div>
+          </details>
+          <details id="metamodule">
+            <summary>What is a metamodule, and why NoMount?</summary>
+            <div class="answer">
+              <p>KernelSU and KernelSU Next only add a module's apps and files to the system when a <a href="https://kernelsu.org/guide/metamodule.html">metamodule</a> is installed. Our Interconnect and Key Enabler modules add apps, so they need one. Without it they install, but their apps never appear.</p>
+              <p>We recommend <a href="https://github.com/maxsteeel/nomount/releases/latest">NoMount</a>: it adds module files without mounting anything, and it is what our modules are tested with. Install it first and restart, then install our modules.</p>
+            </div>
+          </details>
+          <details id="tested">
+            <summary>Which phone has it been tested on?</summary>
+            <div class="answer"><p>A Xiaomi 17 Pro Max on the HyperOS EU (EEA) ROM, rooted with KernelSU Next and the NoMount metamodule. Other Xiaomi phones on HyperOS should work the same way, but have not been tested.</p></div>
           </details>
           <details id="digital-key">
             <summary>Will I lose the car's digital key on a Global or EEA ROM?</summary>

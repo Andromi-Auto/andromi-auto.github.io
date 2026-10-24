@@ -50,6 +50,7 @@
           <li><a href="#automatic-start">Automatic start</a></li>
           <li><a href="#picture">Picture quality</a></li>
           <li><a href="#updates">Updates</a></li>
+          <li><a href="#metamodule">Metamodule (NoMount)</a></li>
           <li><a href="#interconnectivity-module">Interconnectivity module</a></li>
           <li><a href="#digital-key">Car digital key</a></li>
           <li><a href="#help">Getting help</a></li>
@@ -63,10 +64,15 @@
             <li><span class="icon filled">check_circle</span><div><strong>HyperOS <span class="badge">Required</span></strong><span class="text">A Xiaomi phone on HyperOS. Andromi Auto relies on HyperOS's Xiaomi Interconnectivity to appear on the car screen.</span></div></li>
             <li><span class="icon filled">check_circle</span><div><strong>Global or EEA (EU) ROM <span class="badge">Recommended</span></strong><span class="text">Android Auto runs on the phone, so it needs Google services and a ROM where Android Auto is supported. Global and EEA ROMs have both.</span></div></li>
             <li><span class="icon filled">check_circle</span><div><strong>Android Auto <span class="badge">Required</span></strong><span class="text">The Android Auto app from Google Play, kept up to date.</span></div></li>
-            <li><span class="icon filled">check_circle</span><div><strong>Unlocked bootloader and root <span class="badge">Required</span></strong><span class="text">Root with KernelSU is needed to install the Interconnectivity module, and lets the app set up automatic start with one tap. Unlocking the bootloader erases the phone, so back up first.</span></div></li>
+            <li><span class="icon filled">check_circle</span><div><strong>Unlocked bootloader and root <span class="badge">Required</span></strong><span class="text">Root with KernelSU or KernelSU Next is needed to install the Interconnectivity module, and lets the app set up automatic start with one tap. Unlocking the bootloader erases the phone, so back up first.</span></div></li>
+            <li><span class="icon filled">check_circle</span><div><strong>Metamodule <span class="badge">Required</span></strong><span class="text">Our KernelSU modules add apps and files to the system, which KernelSU only does with a metamodule installed. We recommend <b>NoMount</b>. See <a href="#metamodule">Metamodule</a>.</span></div></li>
             <li><span class="icon filled">check_circle</span><div><strong>Interconnectivity module <span class="badge">Required</span></strong><span class="text">Global and EEA ROMs cannot connect to a Xiaomi EV on their own. This KernelSU module adds it; without it, Andromi Auto has no car screen to show on. See <a href="#interconnectivity-module">Interconnectivity module</a>.</span></div></li>
             <li><span class="icon">key</span><div><strong>Digital key module <span class="badge optional">Optional</span></strong><span class="text">Not needed for Andromi Auto. See <a href="#digital-key">Car digital key</a>.</span></div></li>
           </ul>
+          <div class="note">
+            <span class="icon">verified</span>
+            <div><p><b>Tested on:</b> Xiaomi 17 Pro Max, HyperOS EU (EEA) ROM, KernelSU Next with the NoMount metamodule.</p></div>
+          </div>
           <div class="note">
             <span class="icon">info</span>
             <div><p>Andromi Auto installs under the name <code>com.baidu.searchbox</code>, because the car only shows apps from Xiaomi's allowed list. Uninstall the real Baidu app first, if you have it. <a href="faq.html#baidu">Why this name?</a></p></div>
@@ -148,6 +154,25 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
           </div>
         </section>
 
+        <section id="metamodule">
+          <h2><span class="icon">layers</span>Metamodule (NoMount)</h2>
+          <p>Our KernelSU modules add apps and settings files to the phone's system. KernelSU and KernelSU Next do not do that on their own any more: they need a <b>metamodule</b>, a special module that puts the other modules' files in place. <b>Install it first</b>, before the Interconnectivity and digital key modules. Without it they install, but their apps never show up.</p>
+          <p>We recommend <b>NoMount</b>. It makes module files appear without mounting anything, and it is what our modules are tested with.</p>
+          <div class="btn-row" style="margin:20px 0">
+            <a class="btn btn-filled" href="https://github.com/maxsteeel/nomount/releases/latest"><span class="icon">download</span>Download NoMount</a>
+            <a class="btn btn-outlined" href="https://kernelsu.org/guide/metamodule.html"><span class="icon">help</span>What is a metamodule?</a>
+          </div>
+          <ol class="steps">
+            <li><strong>Download NoMount</strong><p>On the NoMount release page, download the module zip under Assets.</p></li>
+            <li><strong>Install it in KernelSU</strong><p>Open <b>KernelSU</b> (or KernelSU Next) → <b>Module</b> → <b>Install</b>, choose the zip, then restart the phone.</p></li>
+            <li><strong>Then install our modules</strong><p>Continue with the <a href="#interconnectivity-module">Interconnectivity module</a> below.</p></li>
+          </ol>
+          <div class="note">
+            <span class="icon">info</span>
+            <div><p>Only one metamodule can be active. If you already use another one (for example meta-overlayfs), it may work too, but NoMount is the one we test with.</p><p>NoMount works without a custom kernel on phones with a GKI kernel 5.10 or newer, which recent Xiaomi phones have.</p></div>
+          </div>
+        </section>
+
         <section id="interconnectivity-module">
           <h2><span class="icon">extension</span>Interconnectivity module</h2>
           <p>On <b>Global and EEA (EU) ROMs</b> the phone cannot connect to a Xiaomi EV, so Andromi Auto has nowhere to be shown. The <b>Xiaomi EV Interconnect</b> KernelSU module adds Xiaomi's car connection service back to these ROMs, and sets the <b>Wi-Fi country to China (CN)</b>: the phone connects to the car over Wi-Fi Direct, which only works on the Chinese Wi-Fi region, even on a Chinese ROM. <b>This module is required</b>: without it the app is of no use in the car.</p>
@@ -156,8 +181,9 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
             <a class="btn btn-outlined" href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect"><span class="icon">code</span>Module source</a>
           </div>
           <ol class="steps">
+            <li><strong>Install NoMount first</strong><p>If you have not yet, install the <a href="#metamodule">NoMount metamodule</a> and restart.</p></li>
             <li><strong>Download the zip</strong><p>On the release page, tap <b>xiaomi-ev-interconnect-&lt;version&gt;.zip</b> under Assets. Keep it as a zip; do not unpack it.</p></li>
-            <li><strong>Install it in KernelSU</strong><p>Open <b>KernelSU</b>, go to the <b>Module</b> tab, tap <b>Install</b> and choose the zip.</p></li>
+            <li><strong>Install it in KernelSU</strong><p>Open <b>KernelSU</b> (or KernelSU Next), go to the <b>Module</b> tab, tap <b>Install</b> and choose the zip.</p></li>
             <li><strong>Reboot</strong><p>Restart the phone when KernelSU has finished. The phone can now connect to your Xiaomi EV with Interconnectivity.</p></li>
           </ol>
           <div class="note">
@@ -178,7 +204,7 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
             <a class="btn btn-outlined" href="https://github.com/Andromi-Auto/xiaomi-ev-key"><span class="icon">code</span>Module source</a>
           </div>
           <ol class="steps">
-            <li><strong>Download the zip</strong><p>On the release page, tap <b>xiaomi-ev-key-&lt;version&gt;.zip</b> under Assets.</p></li>
+            <li><strong>Download the zip</strong><p>On the release page, tap <b>xiaomi-ev-key-&lt;version&gt;.zip</b> under Assets. This module also needs the <a href="#metamodule">NoMount metamodule</a>.</p></li>
             <li><strong>Install it in KernelSU</strong><p>Open <b>KernelSU</b> → <b>Module</b> → <b>Install</b>, choose the zip, then restart the phone.</p></li>
             <li><strong>Add the car key</strong><p>After the restart, add your Xiaomi EV as a digital key as you normally would.</p></li>
           </ol>
