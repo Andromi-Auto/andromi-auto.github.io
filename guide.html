@@ -150,7 +150,7 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
 
         <section id="interconnectivity-module">
           <h2><span class="icon">extension</span>Interconnectivity module</h2>
-          <p>On <b>Global and EEA (EU) ROMs</b> the phone cannot connect to a Xiaomi EV, so Andromi Auto has nowhere to be shown. The <b>Xiaomi EV Interconnect</b> KernelSU module adds Xiaomi's car connection service back to these ROMs. <b>This module is required</b>: without it the app is of no use in the car.</p>
+          <p>On <b>Global and EEA (EU) ROMs</b> the phone cannot connect to a Xiaomi EV, so Andromi Auto has nowhere to be shown. The <b>Xiaomi EV Interconnect</b> KernelSU module adds Xiaomi's car connection service back to these ROMs, and sets the <b>Wi-Fi country to China (CN)</b>: the phone connects to the car over Wi-Fi Direct, which only works on the Chinese Wi-Fi region, even on a Chinese ROM. <b>This module is required</b>: without it the app is of no use in the car.</p>
           <div class="btn-row" style="margin:20px 0">
             <a class="btn btn-filled" href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect/releases/latest"><span class="icon">download</span>Download the module</a>
             <a class="btn btn-outlined" href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect"><span class="icon">code</span>Module source</a>
@@ -163,7 +163,8 @@ pm grant com.baidu.searchbox android.permission.POST_NOTIFICATIONS</code></pre><
           <div class="note">
             <span class="icon">info</span>
             <div>
-              <p><b>Your phone's region is reported as China</b> while the module is active, because Xiaomi's car connection service only runs on the Chinese region. Some Xiaomi apps that check the region may behave as on a Chinese ROM. Removing the module and restarting restores the original region.</p>
+              <p><b>Your phone's region and Wi-Fi country are China</b> while the module is active, because Xiaomi's car connection only works on the Chinese region. Some Xiaomi apps that check the region may behave as on a Chinese ROM. Removing the module and restarting restores both.</p>
+              <p><b>No LSPosed needed.</b> The module sets the Wi-Fi country by itself. If you used LSPosed or Vector with the "WiFi Country Code" module for this, turn that module off.</p>
               <p>New versions of the module appear as an update in KernelSU's module list.</p>
             </div>
           </div>

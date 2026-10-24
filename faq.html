@@ -92,6 +92,13 @@
             <summary>Why does my phone show China as its region after installing the module?</summary>
             <div class="answer"><p>Xiaomi's car connection service only runs on the Chinese region, so the <a href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect">Xiaomi EV Interconnect</a> module reports the region as China while it is active. Some Xiaomi apps that check the region may behave as on a Chinese ROM. Removing the module and restarting restores the original region.</p></div>
           </details>
+          <details id="wifi-country">
+            <summary>Why does the module set the Wi-Fi country to China?</summary>
+            <div class="answer">
+              <p>The phone connects to a Xiaomi EV over Wi-Fi Direct, and that link only works when the phone's Wi-Fi country is China (CN), on any ROM, Chinese ones included. The <a href="https://github.com/Andromi-Auto/xiaomi-ev-interconnect">Xiaomi EV Interconnect</a> module sets it on every start and checks once a minute that it stays CN.</p>
+              <p>You do not need LSPosed, Vector or the "WiFi Country Code" Xposed module for this. If you have that module, turn it off.</p>
+            </div>
+          </details>
           <details id="baidu">
             <summary>Why does it install as com.baidu.searchbox?</summary>
             <div class="answer">
