@@ -18,3 +18,21 @@ Plain HTML, CSS and a little JavaScript, no build step:
 
 The download buttons use GitHub's `releases/latest/download/Andromi-Auto-release.apk` link, so they
 always point at the newest stable release without editing the site.
+
+## Cache busting
+
+GitHub Pages lets browsers keep CSS and JS for 10 minutes, so a page could load new HTML with an
+old stylesheet. Every page links them as `assets/style.css?v=<hash>`; after changing either file,
+refresh the hashes:
+
+```sh
+python3 - <<'PY'
+import hashlib, re, glob
+ver = {f: hashlib.sha256(open(f"assets/{f}", "rb").read()).hexdigest()[:8] for f in ("style.css", "app.js")}
+for p in glob.glob("*.html"):
+    s = open(p).read()
+    for f, v in ver.items():
+        s = re.sub(r"(assets/" + re.escape(f) + r")(\?v=[0-9a-f]+)?\"", r"\1?v=" + v + '"', s)
+    open(p, "w").write(s)
+PY
+```
