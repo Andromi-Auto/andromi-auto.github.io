@@ -273,36 +273,17 @@ section + section { padding-top: 24px; }
 .hero .chips { margin-top: 24px; }
 .release-note { margin-top: 14px; font-size: .9rem; color: var(--on-surface-variant); min-height: 1.4em; }
 
-/* The illustration: phone → Andromi Auto → car screen, drawn in CSS so it follows the theme. */
+/* Hero: the car screen and the phone → HyperOS → car steps under it. */
 .scene {
   position: relative; background: var(--surface-container); border-radius: var(--radius-l);
   margin: 0; padding: 28px; display: grid; gap: 18px; overflow: hidden;
 }
+/* A real screenshot of the car screen, in a thin dark bezel like the car's display. */
 .car-screen {
-  background: #111; border-radius: 20px; padding: 10px; aspect-ratio: 16 / 7.4;
-  display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px;
-  box-shadow: inset 0 0 0 2px #2a2a2a;
+  background: #0b0b0d; border-radius: 22px; padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25), inset 0 0 0 1px #2a2b30;
 }
-.car-widget { border-radius: 12px; background: #1F1F1F; padding: 12px; color: #DADADA; font-size: .8rem; display: grid; align-content: space-between; }
-.car-widget strong { font-size: 1.5rem; font-weight: 400; color: #fff; }
-.aa-window { border-radius: 12px; background: #202124; overflow: hidden; display: grid; grid-template-rows: 1fr auto; }
-.aa-map {
-  background:
-    linear-gradient(115deg, transparent 46%, #8AB4F8 46.5%, #8AB4F8 49.5%, transparent 50%),
-    linear-gradient(25deg, transparent 60%, #3c4043 60.5%, #3c4043 64%, transparent 64.5%),
-    linear-gradient(160deg, transparent 30%, #3c4043 30.5%, #3c4043 33%, transparent 33.5%),
-    #2D2E30;
-  position: relative;
-}
-.aa-map::after {
-  content: ""; position: absolute; left: 47%; top: 52%; width: 14px; height: 14px; border-radius: 50%;
-  background: #8AB4F8; box-shadow: 0 0 0 5px rgba(138, 180, 248, .3);
-}
-.aa-rail { display: flex; gap: 8px; padding: 8px; background: #000; }
-.aa-rail span { width: 18px; height: 18px; border-radius: 50%; background: #3C4043; }
-.aa-rail span:nth-child(1) { background: #8AB4F8; }
-.aa-rail span:nth-child(2) { background: #81C995; }
-.aa-rail span:nth-child(3) { background: #FDD663; }
+.car-screen img { display: block; width: 100%; height: auto; border-radius: 15px; }
 .flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; gap: 4px; }
 .flow-step { display: grid; justify-items: center; gap: 8px; text-align: center; font-size: .85rem; font-weight: 500; color: var(--on-surface); line-height: 1.3; }
 .flow-step .icon { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--primary-container); color: var(--on-primary-container); font-size: 22px; }
